@@ -5,7 +5,8 @@ from .models import Message
 
 # Create your views here.
 def write_message(request, device, message):
-    pass
+    Message.objects.create(device=device, message=message)
+    return HttpResponse("Message saved.")
 
 
 def read_message(request):
